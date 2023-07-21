@@ -1,0 +1,88 @@
+.cur_weather {
+  width: 100%;
+  margin-top: 50px;
+
+  .name_city {
+    font-size: 5rem;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .day {
+    margin-top: -15px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
+
+  .weather_content {
+    height: 200px;
+    display: grid;
+    gap: 0 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    .weather_content_item_left {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      place-items: center;
+    }
+
+    .weather_content_item_right {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff38;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      place-items: center;
+      color: #fff;
+    }
+  }
+}
+
+.weather_content_item_left {
+  .icon {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    img {
+      width: 150px;
+    }
+  }
+  .condition {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    .temperature {
+      font-size: 9rem;
+      font-weight: 500;
+      color: #fff;
+    }
+    .status {
+      font-weight: 300;
+      color: #fff;
+      margin-top: -50px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.weather_content_item_right {
+  text-align: center;
+  .desc {
+    font-size: 1.5rem;
+  }
+  .value {
+    font-size: 1.5rem;
+  }
+}

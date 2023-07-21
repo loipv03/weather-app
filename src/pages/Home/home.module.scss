@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  height: max-content;
+  background-image: url("../../assets/image/hinh-nen-may-tinh-4k-don-gian-ma-dep-chill.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .title {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    padding: 10px;
+  }
+
+  .main_content {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.content {
+  width: 100%;
+  .content_item {
+    width: 100%;
+  }
+}

@@ -1,0 +1,42 @@
+.weather_forecast {
+  height: 120px;
+  margin-top: 20px;
+
+  .title {
+    color: #fff;
+    font-size: 3rem;
+    padding-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .forecast_content {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px 20px;
+
+    .forecast_item {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff38;
+      border-radius: 10px;
+      color: #fff;
+      display: grid;
+      place-items: center;
+
+      .day {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+
+      .icon {
+        font-size: 5rem;
+      }
+
+      .temperature {
+        font-size: 1.5rem;
+        margin-top: -20px;
+      }
+    }
+  }
+}
