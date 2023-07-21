@@ -1,6 +1,5 @@
 import classNames from "classnames/bind";
 import styles from "./Forecast.module.scss";
-import { WeatherStore } from "../../redux/store";
 import { ForecastDay, WeatherData } from "../../type/weather.type";
 
 const cx = classNames.bind(styles);
