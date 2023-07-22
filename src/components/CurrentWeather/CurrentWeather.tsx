@@ -1,6 +1,5 @@
 import classNames from "classnames/bind";
 import styles from "./currentWeather.module.scss";
-import { WeatherData } from "../../type/weather.type";
 import { useSelector } from "react-redux";
 import { WeatherStore } from "../../redux/store";
 
