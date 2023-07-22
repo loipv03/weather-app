@@ -4,7 +4,7 @@ import WeatherForecast from "../../components/WeatherForecast/WeatherForecast";
 import classNames from "classnames/bind";
 import styles from "./home.module.scss";
 import { AppDispatch } from "../../redux/store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getWeathers } from "../../redux/weather/weather.slice";
 import { useDispatch } from "react-redux";
 
