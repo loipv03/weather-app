@@ -19,14 +19,15 @@ const CurrentWeather = ({ daysOfWeek }: IProps) => {
       <div className={cx("name_city")}>
         {weatherData.location.name}, {weatherData.location.country}
       </div>
-      <div className={cx("day")}>{daysOfWeek[dayOfWeek]}</div>
+      <div className={cx("day")}>
+        {daysOfWeek[dayOfWeek]}
+        <br />
+        <span>{weatherData.location.localtime}</span>
+      </div>
       <article className={cx("weather_content")}>
         <div className={cx("weather_content_item_left")}>
           <div className={cx("icon")}>
-            <img
-              src={`https:${weatherData.current.condition.icon}`}
-              alt=""
-            />
+            <img src={`https:${weatherData.current.condition.icon}`} alt="" />
           </div>
           <div className={cx("condition")}>
             <div className={cx("temperature")}>

@@ -4,7 +4,7 @@ import WeatherForecast from "../../components/WeatherForecast/WeatherForecast";
 import classNames from "classnames/bind";
 import styles from "./home.module.scss";
 import { AppDispatch } from "../../redux/store";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getWeathers } from "../../redux/weather/weather.slice";
 import { useDispatch } from "react-redux";
 
@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 const Home = () => {
   const dispatch = useDispatch();
   const daysOfWeek: string[] = [
-    "Sunday",
+    "Chủ nhật",
     "Monday",
     "Tuesday",
     "Wednesday",
@@ -23,15 +23,19 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    (dispatch as AppDispatch)(getWeathers());
-  }, []);
+    (dispatch as AppDispatch)(getWeathers(`ha noi`));
+  }, [dispatch]);
+
+  const handleSearch = ({ cityName }: any) => {
+    (dispatch as AppDispatch)(getWeathers(`${cityName}`));
+  };
   return (
     <div className={cx("container")}>
       <div className={cx("title")}>WEATHER APP</div>
       <main className={cx("main_content")}>
         <section className={cx("content")}>
           <article className={cx("content_item")}>
-            <Input />
+            <Input onSearch={handleSearch} />
           </article>
           <article className={cx("content_item")}>
             <CurrentWeather daysOfWeek={daysOfWeek} />

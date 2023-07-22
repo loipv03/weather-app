@@ -1,5 +1,5 @@
 import instance from "./instance";
 
-export const getWeather = () => {
-  return instance.get("");
+export const getWeather = (cityName: string) => {
+  return instance.get(`${cityName}`);
 };

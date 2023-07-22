@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { getWeather } from "../../api/weather";
 import { Current, Forecast, Location } from "../../type/weather.type";
 
@@ -6,6 +6,7 @@ interface WeatherData {
   location: Location;
   current: Current;
   forecast: Forecast;
+  search?: string;
 }
 
 const initialState: WeatherData = {
@@ -51,16 +52,20 @@ const initialState: WeatherData = {
   forecast: {
     forecastday: [],
   },
+  search: "",
 };
 
-export const getWeathers = createAsyncThunk("weather/getData", async () => {
-  try {
-    const { data } = await getWeather();
-    return data;
-  } catch (error) {
-    throw error;
+export const getWeathers = createAsyncThunk(
+  "weather/getData",
+  async (action: PayloadAction<string>["payload"]) => {
+    try {
+      const { data } = await getWeather(action);
+      return data;
+    } catch (error) {
+      throw error;
+    }
   }
-});
+);
 
 const weatherSlice = createSlice({
   name: "weather",

@@ -12,7 +12,7 @@
 
   .day {
     margin-top: -15px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #ffffff;
     font-weight: 500;
     letter-spacing: 3px;
@@ -22,7 +22,7 @@
     width: 100%;
     height: max-content;
     display: grid;
-    gap: 0 20px;
+    gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     .weather_content_item_left {
@@ -36,13 +36,12 @@
     .weather_content_item_right {
       width: 100%;
       height: 100%;
-      background-color: #ffffff38;
+      background-color: #ffffff46;
       border-radius: 10px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
       padding: 20px;
-      place-items: center;
       color: #fff;
     }
   }
@@ -57,8 +56,7 @@
     align-items: center;
     justify-items: end;
     img {
-      width: 100%;
-      image-rendering: crisp-edges;
+      width: 70%;
     }
   }
   .condition {
@@ -75,6 +73,7 @@
       font-weight: 300;
       color: #fff;
       font-size: 1.5rem;
+      margin-top: -15%;
     }
   }
 }

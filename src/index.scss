@@ -15,6 +15,18 @@ body {
   list-style: 0;
   text-decoration: 0;
   font-weight: 300;
+  position: relative;
+  &::before {
+    content: "";
+    background-image: url("./assets/image/hinh-nen-may-tinh-4k-don-gian-ma-dep-chill.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    filter: blur(5px);
+  }
 }
 
 @media (max-width: 767px) {
