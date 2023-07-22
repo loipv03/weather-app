@@ -1,20 +1,22 @@
 import classNames from "classnames/bind";
 import styles from "./Forecast.module.scss";
 import { ForecastDay, WeatherData } from "../../type/weather.type";
+import { useSelector } from "react-redux";
+import { WeatherStore } from "../../redux/store";
 
 const cx = classNames.bind(styles);
 
 interface IProps {
   daysOfWeek: string[];
-  weathers: WeatherData;
 }
 
-const WeatherForecast = ({ weathers, daysOfWeek }: IProps) => {
+const WeatherForecast = ({ daysOfWeek }: IProps) => {
+  const weatherData = useSelector((state: WeatherStore) => state.weathers);
   return (
     <section className={cx("weather_forecast")}>
       <div className={cx("title")}>Forecast</div>
       <section className={cx("forecast_content")}>
-        {weathers.forecast.forecastday.map((forecastday: ForecastDay) => {
+        {weatherData.forecast.forecastday.map((forecastday: ForecastDay) => {
           const date = new Date(forecastday.date);
           const dayOfWeek = date.getDay();
           return (
